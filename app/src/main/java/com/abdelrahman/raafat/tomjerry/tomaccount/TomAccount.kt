@@ -20,6 +20,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.abdelrahman.raafat.tomjerry.R
@@ -68,26 +69,26 @@ fun TomAccount() {
 
                 val stats = listOf(
                     StatData(
-                        title = "2M 12K",
-                        subtitle = "No. of quarrels",
+                        title = stringResource(R.string._2m_12k),
+                        subtitle = stringResource(R.string.no_of_quarrels),
                         iconRes = R.drawable.ic_quarrels,
                         backgroundColor = LinkWater
                     ),
                     StatData(
-                        title = "+500 h",
-                        subtitle = "Chase time",
+                        title = stringResource(R.string._500_h),
+                        subtitle = stringResource(R.string.chase_time),
                         iconRes = R.drawable.ic_chase_time,
                         backgroundColor = ChromeWhite
                     ),
                     StatData(
-                        title = "2M 12K",
-                        subtitle = "Hunting times",
+                        title = stringResource(R.string._2m_12k),
+                        subtitle = stringResource(R.string.hunting_times),
                         iconRes = R.drawable.ic_hunting,
                         backgroundColor = VanillaIce
                     ),
                     StatData(
-                        title = "3M 7K",
-                        subtitle = "Heartbroken ddsdds sddsds ddsdsds dsdsewe",
+                        title = stringResource(R.string._3m_7k),
+                        subtitle = stringResource(R.string.heartbroken_ddsdds_sddsds_ddsdsds_dsdsewe),
                         iconRes = R.drawable.ic_heart_broken,
                         backgroundColor = Champagne
                     )
@@ -105,18 +106,19 @@ fun TomAccount() {
                 val tomSettingsItem = listOf(
                     SettingsItem(
                         icon = painterResource(R.drawable.ic_bed),
-                        text = "Change sleeping place"
+                        text = stringResource(R.string.change_sleeping_place)
                     ),
                     SettingsItem(
-                        icon = painterResource(R.drawable.ic_meow), text = "Meow settings"
+                        icon = painterResource(R.drawable.ic_meow),
+                        text = stringResource(R.string.meow_settings)
                     ),
                     SettingsItem(
                         icon = painterResource(R.drawable.ic_password),
-                        text = "Password to open the fridge"
+                        text = stringResource(R.string.password_to_open_the_fridge)
                     )
                 )
                 SettingsSection(
-                    sectionTitle = "Tom settings",
+                    sectionTitle = stringResource(R.string.tom_settings),
                     sectionItems = tomSettingsItem,
                     modifier = Modifier
                         .fillMaxWidth()
@@ -133,19 +135,19 @@ fun TomAccount() {
                 val favoriteFoodsSettingsItem = listOf(
                     SettingsItem(
                         icon = painterResource(R.drawable.ic_alert),
-                        text = "Mouses"
+                        text = stringResource(R.string.mouses)
                     ),
                     SettingsItem(
                         icon = painterResource(R.drawable.ic_hamburger),
-                        text = "Last stolen meal"
+                        text = stringResource(R.string.last_stolen_meal)
                     ),
                     SettingsItem(
                         icon = painterResource(R.drawable.ic_sleeping),
-                        text = "Change sleep mood"
+                        text = stringResource(R.string.change_sleep_mood)
                     )
                 )
                 SettingsSection(
-                    sectionTitle = "Favorite foods",
+                    sectionTitle = stringResource(R.string.favorite_foods),
                     sectionItems = favoriteFoodsSettingsItem,
                     modifier = Modifier
                         .fillMaxWidth()
@@ -154,7 +156,7 @@ fun TomAccount() {
 
                 Spacer(Modifier.height(24.dp))
                 Text(
-                    text = "v.TomBeta",
+                    text = stringResource(R.string.v_tombeta),
                     style = bodyNormal.copy(
                         color = CodGray
                     )
