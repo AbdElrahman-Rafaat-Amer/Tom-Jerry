@@ -68,8 +68,6 @@ fun TomKitchen() {
                 .width(384.dp)
                 .height(414.2118.dp)
                 .offset(x = (-90).dp)
-                .zIndex(1f),
-            colorFilter = ColorFilter.tint(Color.Red)
         )
 
         Column(
