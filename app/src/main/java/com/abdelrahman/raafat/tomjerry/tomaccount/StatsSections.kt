@@ -23,7 +23,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import com.abdelrahman.raafat.tomjerry.ui.theme.CodGray2
+import com.abdelrahman.raafat.tomjerry.ui.theme.TranslucentCharcoal
 import com.abdelrahman.raafat.tomjerry.ui.theme.White
 import com.abdelrahman.raafat.tomjerry.ui.theme.bodySemiBold
 
@@ -85,7 +85,7 @@ fun StatCard(data: StatData, modifier: Modifier = Modifier) {
                 )
                 Text(
                     text = data.subtitle,
-                    style = bodySemiBold.copy(color = CodGray2)
+                    style = bodySemiBold.copy(color = TranslucentCharcoal)
                 )
             }
         }

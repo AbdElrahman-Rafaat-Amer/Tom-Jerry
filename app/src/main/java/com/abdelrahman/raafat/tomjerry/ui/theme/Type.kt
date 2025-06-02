@@ -1,11 +1,9 @@
 package com.abdelrahman.raafat.tomjerry.ui.theme
 
 import androidx.compose.material3.Typography
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 // Set of Material typography styles to start with
@@ -98,7 +96,7 @@ val bodyMedium12sp = TextStyle(
     lineHeight = 16.sp,
     fontFamily = ibm_plex_sans_arabic,
     fontWeight = FontWeight.Medium,
-    color = CodGray2,
+    color = TranslucentCharcoal,
     letterSpacing = 0.5.sp
 )
 

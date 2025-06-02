@@ -10,8 +10,10 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
@@ -22,6 +24,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -33,9 +36,10 @@ import androidx.compose.ui.zIndex
 import com.abdelrahman.raafat.tomjerry.R
 import com.abdelrahman.raafat.tomjerry.tomaccount.SectionTitle
 import com.abdelrahman.raafat.tomjerry.ui.theme.AquaHaze
-import com.abdelrahman.raafat.tomjerry.ui.theme.DarkBlue2
+import com.abdelrahman.raafat.tomjerry.ui.theme.JellyBean
 import com.abdelrahman.raafat.tomjerry.ui.theme.LightWhite
 import com.abdelrahman.raafat.tomjerry.ui.theme.LinkWater
+import com.abdelrahman.raafat.tomjerry.ui.theme.MutedTealBlue
 import com.abdelrahman.raafat.tomjerry.ui.theme.VeniceBlue
 import com.abdelrahman.raafat.tomjerry.ui.theme.White
 import com.abdelrahman.raafat.tomjerry.ui.theme.titleMedium
@@ -45,31 +49,39 @@ import com.abdelrahman.raafat.tomjerry.ui.theme.titleMedium16sp
 @Composable
 fun TomKitchen() {
     Box {
-
-        Row(
+        Image(
+            painter = painterResource(R.drawable.ic_food),
+            contentDescription = null,
             modifier = Modifier
-                .padding(end = 24.dp, top = 18.dp)
+                .width(188.dp)
+                .height(168.dp)
+                .offset(y = 58.dp)
+                .padding(end = 24.dp)
+                .align(Alignment.TopEnd)
                 .zIndex(100f)
-        ) {
-            Spacer(Modifier.weight(1f))
-            Image(
-                painter = painterResource(R.drawable.ic_food),
-                contentDescription = null,
-            )
-        }
+        )
 
+        Image(
+            painter = painterResource(R.drawable.ic_ellipse),
+            contentDescription = null,
+            modifier = Modifier
+                .width(384.dp)
+                .height(414.2118.dp)
+                .offset(x = (-90).dp)
+                .zIndex(1f),
+            colorFilter = ColorFilter.tint(Color.Red)
+        )
 
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .background(Color.Red)
+                .background(MutedTealBlue)
+                .zIndex(2f)
         ) {
-
             Column(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .weight(0.3f)
-                    .background(Color.Red)
+                    .weight(0.24f)
                     .padding(start = 16.dp, top = 40.dp),
                 verticalArrangement = Arrangement.spacedBy(16.dp),
             ) {
@@ -87,11 +99,10 @@ fun TomKitchen() {
             Column(
                 modifier = Modifier
                     .clip(RoundedCornerShape(topStart = 16.dp, topEnd = 16.dp))
-                    .weight(0.85f)
+                    .weight(0.76f)
                     .background(AquaHaze)
                     .fillMaxWidth()
                     .padding(top = 32.dp, start = 16.dp, end = 16.dp)
-
             ) {
 
                 Row(
@@ -119,7 +130,7 @@ fun TomKitchen() {
                                 modifier = Modifier.size(16.dp)
                             )
                             Text(
-                                text = "5 cheeses",
+                                text = stringResource(R.string._5_cheeses),
                                 style = titleMedium.copy(color = VeniceBlue, fontSize = 12.sp)
                             )
                         }
@@ -158,11 +169,10 @@ fun TomKitchen() {
                 Button(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(vertical = 15.dp, horizontal = 16.dp)
-                    ,
+                        .padding(vertical = 15.dp, horizontal = 16.dp),
                     shape = RoundedCornerShape(16.dp),
                     colors = ButtonDefaults.buttonColors(
-                        containerColor = DarkBlue2
+                        containerColor = JellyBean
                     ),
                     onClick = {
                         //TODO
@@ -181,7 +191,10 @@ fun TomKitchen() {
                             contentAlignment = Alignment.Center,
                             modifier = Modifier
                                 .size(5.dp)
-                                .background(color = White.copy(alpha = 0.38f), shape = CircleShape)
+                                .background(
+                                    color = White.copy(alpha = 0.38f),
+                                    shape = CircleShape
+                                )
                         ) {
                         }
 
@@ -225,7 +238,7 @@ fun IconTextRow(
     }
 }
 
-@Preview
+@Preview(showBackground = true)
 @Composable
 private fun TomKitchenPreview() {
     TomKitchen()

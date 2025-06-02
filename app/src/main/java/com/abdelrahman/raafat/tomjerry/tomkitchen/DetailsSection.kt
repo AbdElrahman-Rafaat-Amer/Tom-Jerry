@@ -31,20 +31,20 @@ import com.abdelrahman.raafat.tomjerry.ui.theme.titleMedium
 fun DetailsSection() {
     val details = listOf(
         StatData(
-            title = "1000 V",
-            subtitle = "Temperature ",
+            title = stringResource(R.string._1000_v),
+            subtitle = stringResource(R.string.temperature),
             iconRes = R.drawable.ic_heat_temp,
             backgroundColor = LinkWater
         ),
         StatData(
-            title = "3 sparks",
-            subtitle = "Time ",
+            title = stringResource(R.string._3_sparks),
+            subtitle = stringResource(R.string.time),
             iconRes = R.drawable.ic_clock,
             backgroundColor = LinkWater
         ),
         StatData(
-            title = "1M 12K",
-            subtitle = "No. of deaths ",
+            title = stringResource(R.string._1m_12k),
+            subtitle = stringResource(R.string.no_of_deaths),
             iconRes = R.drawable.ic_devil,
             backgroundColor = LinkWater
         )
