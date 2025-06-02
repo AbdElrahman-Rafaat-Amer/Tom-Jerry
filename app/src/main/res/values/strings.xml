@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">Tom Jerry</string>
+    <string name="_2m_12k">2M 12K</string>
+    <string name="no_of_quarrels">No. of quarrels</string>
+    <string name="_500_h">+500 h</string>
+    <string name="chase_time">Chase time</string>
+    <string name="hunting_times">Hunting times</string>
+    <string name="_3m_7k">3M 7K</string>
+    <string name="heartbroken">Heartbroken</string>
+    <string name="change_sleeping_place">Change sleeping place</string>
+    <string name="meow_settings">Meow settings</string>
+    <string name="password_to_open_the_fridge">Password to open the fridge</string>
+    <string name="tom_settings">Tom settings</string>
+    <string name="mouses">Mouses</string>
+    <string name="last_stolen_meal">Last stolen meal</string>
+    <string name="change_sleep_mood">Change sleep mood</string>
+    <string name="favorite_foods">Favorite foods</string>
+    <string name="v_tombeta">v.TomBeta</string>
+    <string name="pasta_cooked">Pasta cooked with a charger cable and sprinkled with questionable cheese. Make sure to unplug it before eating (or not, you decide).</string>
+    <string name="details">Details</string>
+    <string name="high_tension">High tension</string>
+    <string name="shocking_foods">Shocking foods</string>
+    <string name="electric_tom_pasta">Electric Tom pasta</string>
+    <string name="preparation_method">Preparation method</string>
+    <string name="put_the_pasta_in_a_toaster">Put the pasta in a toaster.</string>
+    <string name="pour_battery_juice_over_it">Pour battery juice over it.</string>
+    <string name="wait_for_the_spark_to_ignite">Wait for the spark to ignite.</string>
+    <string name="serve_with_an_insulating_glove">Serve with an insulating glove.</string>
+    <string name="add_to_cart">Add to cart</string>
+    <string name="_3_cheeses">3 cheeses</string>
+    <string name="_5_cheeses">5 cheeses</string>
+    <string name="tom">Tom</string>
+    <string name="specializes_in_failure">specializes in failure!</string>
+    <string name="edit_foolishness">"Edit foolishness "</string>
+    <string name="_1000_v">1000 V</string>
+    <string name="temperature">"Temperature "</string>
+    <string name="time">"Time "</string>
+    <string name="_3_sparks">3 sparks</string>
+    <string name="_1m_12k">1M 12K</string>
+    <string name="no_of_deaths">"No. of deaths "</string>
+    dddd
+</resources>
