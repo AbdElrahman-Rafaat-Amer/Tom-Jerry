@@ -88,7 +88,7 @@ fun TomAccount() {
                     ),
                     StatData(
                         title = stringResource(R.string._3m_7k),
-                        subtitle = stringResource(R.string.heartbroken_ddsdds_sddsds_ddsdsds_dsdsewe),
+                        subtitle = stringResource(R.string.heartbroken),
                         iconRes = R.drawable.ic_heart_broken,
                         backgroundColor = Champagne
                     )

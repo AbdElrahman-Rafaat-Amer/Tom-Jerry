@@ -16,6 +16,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.painter.Painter
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
 import com.abdelrahman.raafat.tomjerry.ui.theme.White
 import com.abdelrahman.raafat.tomjerry.ui.theme.titleLarge
@@ -43,10 +44,10 @@ fun SettingsSection(
 }
 
 @Composable
-fun SectionTitle(title: String) {
+fun SectionTitle(title: String, textStyle: TextStyle = titleLarge) {
     Text(
         text = title,
-        style = titleLarge,
+        style = textStyle,
     )
 }
 

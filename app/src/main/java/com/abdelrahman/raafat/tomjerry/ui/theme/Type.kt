@@ -5,6 +5,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 // Set of Material typography styles to start with
@@ -52,6 +53,24 @@ val titleMedium = TextStyle(
     letterSpacing = 0.sp
 )
 
+val titleMedium16sp = TextStyle(
+    fontSize = 16.sp,
+    lineHeight = 16.sp,
+    fontFamily = ibm_plex_sans_arabic,
+    fontWeight = FontWeight.Medium,
+    color = White.copy(alpha = 0.87f),
+    letterSpacing = 0.5.sp
+)
+
+val titleMedium14sp = TextStyle(
+    fontSize = 14.sp,
+    lineHeight = 20.sp,
+    fontFamily = ibm_plex_sans_arabic,
+    fontWeight = FontWeight.Medium,
+    color = CodGray,
+    letterSpacing = 0.5.sp
+)
+
 val titleMediumSetting = titleMedium.copy(
     fontSize = 16.sp,
     color = Black
@@ -63,6 +82,24 @@ val bodyNormal = TextStyle(
     fontWeight = FontWeight.Normal,
     color = White.copy(alpha = 0.8f),
     letterSpacing = 0.sp
+)
+
+val bodyNormal14sp = TextStyle(
+    fontSize = 14.sp,
+    lineHeight = 16.sp,
+    fontFamily = ibm_plex_sans_arabic,
+    fontWeight = FontWeight.Normal,
+    color =CodGray,
+    letterSpacing = 0.5.sp
+)
+
+val bodyMedium12sp = TextStyle(
+    fontSize = 12.sp,
+    lineHeight = 16.sp,
+    fontFamily = ibm_plex_sans_arabic,
+    fontWeight = FontWeight.Medium,
+    color = CodGray2,
+    letterSpacing = 0.5.sp
 )
 
 val bodySemiBold = TextStyle(
