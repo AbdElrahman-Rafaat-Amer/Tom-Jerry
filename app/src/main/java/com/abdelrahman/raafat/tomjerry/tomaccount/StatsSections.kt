@@ -21,10 +21,10 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.abdelrahman.raafat.tomjerry.ui.theme.CodGray2
+import com.abdelrahman.raafat.tomjerry.ui.theme.White
 import com.abdelrahman.raafat.tomjerry.ui.theme.bodySemiBold
 
 @Composable
@@ -75,8 +75,7 @@ fun StatCard(data: StatData, modifier: Modifier = Modifier) {
                 contentDescription = null,
                 modifier = Modifier
                     .size(40.dp)
-                    .background(Color.White, CircleShape)
-                    .padding(8.dp),
+                    .background(White, CircleShape),
             )
             Spacer(modifier = Modifier.width(12.dp))
             Column {
