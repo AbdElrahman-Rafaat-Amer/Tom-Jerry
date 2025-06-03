@@ -100,10 +100,26 @@ val bodyMedium12sp = TextStyle(
     letterSpacing = 0.5.sp
 )
 
+val bodyMedium10sp = TextStyle(
+    fontSize = 10.sp,
+    fontFamily = ibm_plex_sans_arabic,
+    fontWeight = FontWeight.Medium,
+    color = White,
+    letterSpacing = 0.5.sp
+)
+
 val bodySemiBold = TextStyle(
     fontSize = 16.sp,
     fontFamily = ibm_plex_sans_arabic,
     fontWeight = FontWeight.SemiBold,
     color = CodGray,
+    letterSpacing = 0.5.sp
+)
+
+val bodySemiBold20sp = TextStyle(
+    fontSize = 20.sp,
+    fontFamily = ibm_plex_sans_arabic,
+    fontWeight = FontWeight.SemiBold,
+    color = Black.copy(alpha = 1f),
     letterSpacing = 0.5.sp
 )
