@@ -45,10 +45,6 @@ fun StatsSection(stats: List<StatData>, modifier: Modifier = Modifier) {
                         StatCard(stat)
                     }
                 }
-
-                if (rowItems.size == 1) {
-                    Spacer(modifier = Modifier.weight(1f))
-                }
             }
         }
     }
