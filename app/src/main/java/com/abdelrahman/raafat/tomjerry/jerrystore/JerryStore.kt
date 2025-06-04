@@ -1,69 +1,54 @@
 package com.abdelrahman.raafat.tomjerry.jerrystore
 
-import androidx.compose.foundation.Canvas
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.heightIn
+import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
+import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.verticalScroll
-import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.border
-import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.Icon
-import androidx.compose.material3.Text
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Notifications
-import androidx.compose.material3.AlertDialog
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
-import androidx.compose.material3.CardColors
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
-import androidx.compose.ui.draw.drawBehind
-import androidx.compose.ui.geometry.Offset
-import androidx.compose.ui.geometry.Size
-import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.ColorFilter
-import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.unit.min
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.zIndex
 import com.abdelrahman.raafat.tomjerry.R
-import com.abdelrahman.raafat.tomjerry.tomaccount.StatCard
 import com.abdelrahman.raafat.tomjerry.ui.theme.AquaHaze
-import com.abdelrahman.raafat.tomjerry.ui.theme.Black
-import com.abdelrahman.raafat.tomjerry.ui.theme.Delta
-import com.abdelrahman.raafat.tomjerry.ui.theme.LightDelta
 import com.abdelrahman.raafat.tomjerry.ui.theme.OsloGray
-import com.abdelrahman.raafat.tomjerry.ui.theme.Tuatara
 import com.abdelrahman.raafat.tomjerry.ui.theme.VeniceBlue
 import com.abdelrahman.raafat.tomjerry.ui.theme.White
-import com.abdelrahman.raafat.tomjerry.ui.theme.bodyMedium10sp
 import com.abdelrahman.raafat.tomjerry.ui.theme.bodyMedium12sp
 import com.abdelrahman.raafat.tomjerry.ui.theme.bodyNormal
-import com.abdelrahman.raafat.tomjerry.ui.theme.bodyNormal14sp
-import com.abdelrahman.raafat.tomjerry.ui.theme.bodySemiBold
 import com.abdelrahman.raafat.tomjerry.ui.theme.bodySemiBold20sp
-import com.abdelrahman.raafat.tomjerry.ui.theme.titleMedium14sp
-import kotlin.collections.chunked
-import kotlin.collections.forEach
-
 
 @Composable
 fun JerryStore() {
@@ -83,7 +68,7 @@ fun JerryStore() {
         JerryTopBar()
         Spacer(Modifier.height(12.dp))
         SearchBar()
-        Spacer(Modifier.height(24.dp))
+        Spacer(Modifier.height(12.dp))
         PromoBanner()
         Spacer(Modifier.height(24.dp))
         CheapTomSection()
@@ -152,27 +137,22 @@ fun CheapTomSection() {
         )
     )
 
-    Column(
-        verticalArrangement = Arrangement.spacedBy(12.dp)
+    LazyVerticalGrid(
+        columns = GridCells.Fixed(2),
+        verticalArrangement = Arrangement.spacedBy(28.dp),
+        horizontalArrangement = Arrangement.spacedBy(8.dp),
+        modifier = Modifier
+            .fillMaxWidth()
+            .heightIn(min = 0.dp, max = 2000.dp),
+        contentPadding = PaddingValues(vertical = 16.dp)
     ) {
-        toms.chunked(2).forEachIndexed { index, rowItems ->
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.spacedBy(8.dp)
-            ) {
-                rowItems.forEach { item ->
-                    Box(
-                        modifier = Modifier
-                            .weight(1f)
-//                            .background(Color.Red)
-                    ) {
-                        TomCard(item, modifier = Modifier
-                            .fillMaxSize()
-//                            .background(Color.Yellow)
-                        )
-                    }
-                }
-            }
+        items(toms) { item ->
+            TomCard(
+                tom = item,
+                modifier = Modifier
+                    .height(220.dp)
+                    .fillMaxWidth()
+            )
         }
     }
 }
@@ -180,57 +160,92 @@ fun CheapTomSection() {
 
 @Composable
 fun TomCard(tom: Tom, modifier: Modifier = Modifier) {
-//    Image(
-//        painter = painterResource(id = tom.imageRes),
-//        contentDescription = null,
-//        modifier = Modifier
-//            .height(64.dp)
-//            .align(Alignment.CenterHorizontally)
-//    )
-    Card(
-        shape = RoundedCornerShape(16.dp),
-        colors = CardDefaults.cardColors().copy(containerColor = White),
-        modifier = Modifier
-            .fillMaxWidth()
+    Box(
+        contentAlignment = Alignment.TopCenter
     ) {
-        Column(
-            modifier = modifier
-//                .defaultMinSize(minHeight = 219.dp)
-                .padding(8.dp),
-            verticalArrangement = Arrangement.Bottom,
-            horizontalAlignment = Alignment.CenterHorizontally
+        Image(
+            painter = painterResource(id = tom.imageRes),
+            contentDescription = null,
+            modifier = Modifier
+                .height(100.dp)
+                .offset(y = (-16).dp)
+                .zIndex(2f)
+        )
+        Card(
+            shape = RoundedCornerShape(16.dp),
+            colors = CardDefaults.cardColors().copy(containerColor = White),
+            modifier = Modifier
+                .fillMaxWidth()
         ) {
-
-            Text(
-                text = tom.title,
-                style = bodySemiBold20sp.copy(fontSize = 18.sp)
-            )
-            Spacer(Modifier.height(2.dp))
-
-            Text(
-                text = tom.description,
-                style = bodyNormal.copy(color = OsloGray),
-                textAlign = TextAlign.Center
-            )
-
-            Spacer(Modifier.height(8.dp))
-
-            Row(
-                horizontalArrangement = Arrangement.SpaceBetween,
-                modifier = Modifier.fillMaxWidth()
+            Column(
+                modifier = modifier.padding(8.dp),
+                horizontalAlignment = Alignment.CenterHorizontally
             ) {
-                Row(verticalAlignment = Alignment.CenterVertically) {
-                    Image(
-                        painter = painterResource(R.drawable.ic_money_bag),
-                        contentDescription = null,
-                    )
-                    Spacer(Modifier.width(4.dp))
-                    Text(stringResource(R.string.cheeses, tom.price), fontSize = 12.sp)
-                }
-                Image(
-                    painter = painterResource(R.drawable.ic_cart),
-                    contentDescription = null,
+
+                Spacer(Modifier.height(100.dp))
+                Text(
+                    text = tom.title,
+                    style = bodySemiBold20sp.copy(fontSize = 18.sp)
                 )
+                Spacer(Modifier.height(2.dp))
+
+                Text(
+                    text = tom.description,
+                    style = bodyNormal.copy(color = OsloGray),
+                    textAlign = TextAlign.Center
+                )
+
+                Spacer(Modifier.weight(1f))
+
+                Row(
+                    horizontalArrangement = Arrangement.spacedBy(8.dp),
+                    verticalAlignment = Alignment.CenterVertically,
+                    modifier = Modifier.fillMaxWidth()
+                ) {
+
+                    Button(
+                        modifier = Modifier.weight(1f),
+                        shape = RoundedCornerShape(8.dp),
+                        colors = ButtonDefaults.buttonColors(
+                            containerColor = Color(0xFFE9F6FB)
+                        ),
+                        contentPadding = PaddingValues(horizontal = 12.dp, vertical = 6.dp),
+                        onClick = {
+                            //TODO
+                        }
+                    ) {
+                        Image(
+                            painter = painterResource(R.drawable.ic_money_bag),
+                            contentDescription = null,
+                        )
+                        Spacer(Modifier.width(4.dp))
+                        Text(
+                            stringResource(R.string.cheeses, tom.price),
+                            style = TextStyle(
+                                fontSize = 12.sp,
+                                fontWeight = FontWeight.Medium,
+                                color = Color(0xFF03578A)
+                            )
+                        )
+                    }
+
+                    Box(
+                        contentAlignment = Alignment.Center,
+                        modifier = Modifier
+                            .border(
+                                1.dp,
+                                color = Color(0xFF03578A),
+                                shape = RoundedCornerShape(8.dp)
+                            )
+                            .size(30.dp)
+                    ) {
+                        Image(
+                            painter = painterResource(R.drawable.ic_cart),
+                            contentDescription = null,
+                        )
+                    }
+
+                }
             }
         }
     }

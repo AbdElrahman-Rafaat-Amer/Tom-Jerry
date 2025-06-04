@@ -11,6 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.abdelrahman.raafat.tomjerry.jerrystore.JerryStore
+import com.abdelrahman.raafat.tomjerry.tomaccount.TomAccount
 import com.abdelrahman.raafat.tomjerry.tomkitchen.TomKitchen
 import com.abdelrahman.raafat.tomjerry.ui.theme.TomJerryTheme
 
@@ -30,8 +31,8 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun HomeScreen(modifier: Modifier = Modifier) {
     Box(modifier = modifier) {
-//        JerryStore()
-        TomKitchen()
+        JerryStore()
+//        TomKitchen()
 //        TomAccount()
 //        SecretEpisodes()
     }
