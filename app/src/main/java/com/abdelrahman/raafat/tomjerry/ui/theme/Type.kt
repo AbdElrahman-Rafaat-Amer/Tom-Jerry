@@ -79,7 +79,6 @@ val bodyNormal = TextStyle(
     fontFamily = ibm_plex_sans_arabic,
     fontWeight = FontWeight.Normal,
     color = White.copy(alpha = 0.8f),
-    letterSpacing = 0.sp
 )
 
 val bodyNormal14sp = TextStyle(
@@ -87,7 +86,7 @@ val bodyNormal14sp = TextStyle(
     lineHeight = 16.sp,
     fontFamily = ibm_plex_sans_arabic,
     fontWeight = FontWeight.Normal,
-    color =CodGray,
+    color = CodGray,
     letterSpacing = 0.5.sp
 )
 
@@ -122,4 +121,11 @@ val bodySemiBold20sp = TextStyle(
     fontWeight = FontWeight.SemiBold,
     color = Black.copy(alpha = 1f),
     letterSpacing = 0.5.sp
+)
+
+val bodySemiBold18sp = TextStyle(
+    fontSize = 18.sp,
+    fontFamily = ibm_plex_sans_arabic,
+    fontWeight = FontWeight.SemiBold,
+    color = Tuatara,
 )
